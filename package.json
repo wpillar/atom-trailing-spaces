@@ -1,0 +1,10 @@
+{
+  "name": "trailing-spaces",
+  "version": "0.1.0",
+  "description": "Highlights trailing white space.",
+  "repository": "https://github.com/wpillar/trailing-spaces",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  }
+}
