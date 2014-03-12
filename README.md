@@ -1,3 +1,3 @@
-# trailing-spaces package
+# Trailing Spaces
 
 Highlights trailing whitespace.
