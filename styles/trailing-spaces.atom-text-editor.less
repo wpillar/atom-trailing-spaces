@@ -4,7 +4,33 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
-.trailing-whitespace {
-    background: @background-color-selected;
-    border-radius: 2px;
+atom-text-editor::shadow {
+  // Only direct descendants of .lines; a comment is a "line within a line"
+  .lines > .line {
+    .trailing-whitespace {
+      background: @background-color-selected;
+      border-radius: 2px;
+      
+      &.indent-guide {
+        background: none;
+      }
+    }
+    
+    // Don't highlight whitespace on a line with a cursor
+    &.cursor-line {
+      .trailing-whitespace {
+        background: none;
+        transition: all 0.4s;
+        transition-delay: 0.1s;
+      }
+    }
+  }
 }
+
+// Enable highlight for lines with only indentation (based on config)
+.trailing-spaces-highlight-indentation atom-text-editor::shadow {
+    .lines > .line:not(.cursor-line) .trailing-whitespace.indent-guide {
+        background: @background-color-selected;
+    }
+}
+
