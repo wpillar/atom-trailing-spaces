@@ -4,7 +4,52 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
-.trailing-whitespace {
-    background: @background-color-selected;
-    border-radius: 2px;
+atom-text-editor:not(.mini)::shadow {
+  // Only direct descendants of .lines; a comment is a "line within a line"
+  .lines > .line {
+    .trailing-whitespace {
+      background: @background-color-selected;
+      border-radius: 2px;
+      
+      // Disable highlight for the lines with only indentation
+      &.indent-guide {
+        background: none;
+      }
+    }
+    
+    // Disable highlight for lines with a cursor on them
+    &.cursor-line .trailing-whitespace {
+      background: none;
+      transition: all 0.4s;
+      transition-delay: 0.1s;
+    }
+  }
 }
+
+// Enable highlight for lines with a cursor on them (based on config)
+.trailing-spaces-highlight-cursor-lines {
+  atom-text-editor:not(.mini)::shadow {
+    .lines > .line.cursor-line .trailing-whitespace:not(.indent-guide) {
+      background: @background-color-selected;
+    }
+  }
+}
+
+// Enable highlight for lines with only indentation (based on config)
+.trailing-spaces-highlight-indentation {
+  atom-text-editor:not(.mini)::shadow {
+    .lines > .line:not(.cursor-line) .trailing-whitespace.indent-guide {
+      background: @background-color-selected;
+    }
+  }
+}
+
+// Both config options enabled
+.trailing-spaces-highlight-cursor-lines.trailing-spaces-highlight-indentation {
+  atom-text-editor:not(.mini)::shadow {
+    .lines > .line.cursor-line .trailing-whitespace.indent-guide {
+      background: @background-color-selected;
+    }
+  }
+}
+
