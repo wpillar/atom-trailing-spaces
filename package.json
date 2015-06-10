@@ -1,6 +1,6 @@
 {
   "name": "trailing-spaces",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "main": "./lib/main.coffee",
   "description": "Highlights trailing white space.",
   "repository": "https://github.com/wpillar/atom-trailing-spaces",
