@@ -7,7 +7,7 @@
 atom-text-editor:not(.mini)::shadow {
   .lines .line {
     .trailing-whitespace {
-      background: @background-color-selected;
+      background: @background-color-warning;
       border-radius: 2px;
       
       // Disable highlight for the lines with only indentation
@@ -29,7 +29,7 @@ atom-text-editor:not(.mini)::shadow {
 .trailing-spaces-highlight-cursor-lines {
   atom-text-editor:not(.mini)::shadow {
     .lines .line.cursor-line .trailing-whitespace:not(.indent-guide) {
-      background: @background-color-selected;
+      background: @background-color-warning;
     }
   }
 }
@@ -38,7 +38,7 @@ atom-text-editor:not(.mini)::shadow {
 .trailing-spaces-highlight-indentation {
   atom-text-editor:not(.mini)::shadow {
     .lines .line:not(.cursor-line) .trailing-whitespace.indent-guide {
-      background: @background-color-selected;
+      background: @background-color-warning;
     }
   }
 }
@@ -47,7 +47,7 @@ atom-text-editor:not(.mini)::shadow {
 .trailing-spaces-highlight-cursor-lines.trailing-spaces-highlight-indentation {
   atom-text-editor:not(.mini)::shadow {
     .lines .line.cursor-line .trailing-whitespace.indent-guide {
-      background: @background-color-selected;
+      background: @background-color-warning;
     }
   }
 }
