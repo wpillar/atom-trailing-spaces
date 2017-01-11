@@ -4,7 +4,7 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
-atom-text-editor:not(.mini)::shadow {
+atom-text-editor:not(.mini).editor {
   .lines .line {
     .trailing-whitespace {
       background: @background-color-warning;
@@ -27,7 +27,7 @@ atom-text-editor:not(.mini)::shadow {
 
 // Enable highlight for lines with a cursor on them (based on config)
 .trailing-spaces-highlight-cursor-lines {
-  atom-text-editor:not(.mini)::shadow {
+  atom-text-editor:not(.mini).editor {
     .lines .line.cursor-line .trailing-whitespace:not(.indent-guide) {
       background: @background-color-warning;
     }
@@ -36,7 +36,7 @@ atom-text-editor:not(.mini)::shadow {
 
 // Enable highlight for lines with only indentation (based on config)
 .trailing-spaces-highlight-indentation {
-  atom-text-editor:not(.mini)::shadow {
+  atom-text-editor:not(.mini).editor {
     .lines .line:not(.cursor-line) .trailing-whitespace.indent-guide {
       background: @background-color-warning;
     }
@@ -45,7 +45,7 @@ atom-text-editor:not(.mini)::shadow {
 
 // Both config options enabled
 .trailing-spaces-highlight-cursor-lines.trailing-spaces-highlight-indentation {
-  atom-text-editor:not(.mini)::shadow {
+  atom-text-editor:not(.mini).editor {
     .lines .line.cursor-line .trailing-whitespace.indent-guide {
       background: @background-color-warning;
     }
